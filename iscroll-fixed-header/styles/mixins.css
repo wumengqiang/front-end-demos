@@ -1,0 +1,8 @@
+@charset "UTF-8";
+/*  some attribute which listed below don't need compatible mixin,
+    All CSS2.1 property
+    border-radius
+
+ */
+/********** 浏览器兼容部分 start**********/
+/********** 浏览器兼容部分 end**********/

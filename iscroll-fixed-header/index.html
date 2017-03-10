@@ -1,0 +1,191 @@
+<html>
+<head>
+	<title>close</title>
+    <meta charset='utf8'>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="stylesheet" href="./plugins/normalize/normalize.css">
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
+<body id="body">
+    <div class="container">
+        <div class="banner" :class="{'banner-open': openAnimation, 'animation-over': animationOver}" :style="bannerStyle">
+            <div class="banner-bg"></div>
+            <div class="icon-nongjia"></div>
+            <div class="banner-vb"></div>
+            <div class="menu-wrapper" v-cloak>
+                <ul class="menu">
+                    <li @click="handleChangeMenu('introduce')">
+                        <span class='menu-bg' :class="'menu-' + menu"></span>
+                        <span class="name">产品介绍</span>
+                    </li>
+                    <li @click="handleChangeMenu('contactus')">联系我们</li>
+                    <li  @click="handleChangeMenu('agent')">代理合作</li>
+                </ul>
+            </div>
+        </div>
+            <div class="content" :style="{'padding-top': animationOver ? bannerHeight : 0}">
+                <div class="menu-introduce" v-show="menu === 'introduce'" >
+                    <p class="introduce-summary">“微景农家”是微景天下（北京）科技有限公司基于全景、地图导航、大数据等自主研发技术构建的平台体系，
+                        为农家院自主运营提供轻量化H5电子名片，同时提供一体化的多终端管理后台，帮助商户改善互联网运营能力的同时，
+                        也为个人用户提供高品质的体验和服务。
+                    </p>
+                    <div class="split"></div>
+                    <div class="part">
+                        <div class="title">
+                            <div class="order">1.</div>
+                            <span class="title-content">农家电子名片</span>
+                        </div>
+                        <p class="summary">可在微信、QQ、微博等社交平台转发分享，建立口碑传播网。</p>
+                        <div class="introduce-pano">
+                            <img class="lazy-load pano-example" data-src=
+                                    "./images/example-pano.png"/>
+                            <div class="feature">
+                                <h4 class="title">全景</h4>
+                                <div class="list-item">还原农家院360度实景</div>
+                                <div class="list-item">提升与潜在客人的沟通效率</div>
+                            </div>
+                        </div>
+                        <div class="introduce-navigation">
+                            <img class="lazy-load navigation-example" data-src=
+                                    "./images/example-navigation.png" />
+                            <div class="feature">
+                                <h4 class="title">一键导航</h4>
+                                <div class="list-item">兼容高德，百度，腾讯等主流地图</div>
+                                <div class="list-item">提高顾客到店便利性</div>
+                            </div>
+                        </div>
+                        <div class="text-pic text-pic-farm-introduce">
+                            <div class="feature">
+                                <h4 class="title">个性化介绍</h4>
+                                <div class="list-item">避免千篇一律的信息复制</div>
+                                <div class="list-item">专业编辑凸显农家特色</div>
+                            </div>
+                            <img class="example-pic lazy-load"
+                                 data-src="./images/data-app-farm-introduce.png"/>
+                        </div>
+                        <div class="text-pic">
+                            <div class="feature">
+                                <h4 class="title">周边景区</h4>
+                                <div class="list-item">建立农家为中心的景区图谱</div>
+                                <div class="list-item">位置优势一目了然</div>
+                            </div>
+                            <img class="example-pic lazy-load"
+                                 data-src="./images/data-app-navigation.png"/>
+                        </div>
+                        <div class="text-pic">
+                            <div class="feature">
+                                <h4 class="title">公告系统</h4>
+                                <div class="list-item">发布动态、活动、时令信息等</div>
+                                <div class="list-item">针对性满足经营需要</div>
+                            </div>
+                            <img class="example-pic lazy-load"
+                                 data-src="./images/data-app-notice.png"/>
+                        </div>
+                    </div>
+                    <div class="split-lg"></div>
+                    <div class="part">
+                        <div class="title">
+                            <div class="order">2.</div>
+                            <span class="title-content">运营管理工具</span>
+                        </div>
+                        <div class="summary">同时支持电脑和手机APP管理，实时查看名片数据，掌握乡村经济最新资讯。</div>
+                        <img class="lazy-load example-manage-tool" data-src="./images/example-manage-tool.png"/>
+                    </div>
+                    <div class="split-lg"></div>
+                    <div class="part">
+                        <div class="title">
+                            <div class="order">3.</div>
+                            <span class="title-content">宣传物料</span>
+                        </div>
+                        <div class="summary">提供全套个性化宣传物料，连通线上线下客流，最大化传播效果。</div>
+                        <img class="lazy-load example-manage-tool" data-src="./images/example-spread.png"/>
+                    </div>
+                    <div class="split-lg"></div>
+                    <div class="part">
+                        <div class="title">
+                            <div class="order">4.</div>
+                            <span class="title-content">培训活动</span>
+                        </div>
+                        <div class="summary">不定期举行同行交流，专家分享，行业研讨，乡村夜校等活动。</div>
+                        <img class="lazy-load example-manage-tool" data-src="./images/example-training.png"/>
+                    </div>
+                    <div class="split-lg"></div>
+                </div>
+                <div class="menu-farmhouse-example" v-if="menu === 'farmhouse'">
+
+                    <div class="farmhouse-group">
+                        <div class="title">北京</div>
+                    </div>
+                </div>
+                <div class="menu-contactus" v-if="menu === 'contactus'">
+                    <p  class="contactus-summary">我们希望您与客人之间建立有效的沟通渠道，帮助您不断提升在行业中的竞争力。欢迎您随时与我们取得联系共商解决方案。</p>
+                    <div class="split"></div>
+                    <h2 class="title">洽谈合作</h2>
+                    <div class="contact-item" v-for="contact in contactList">
+                        <div class="basic-info">
+                            <p class="title">{{contact.name}}</p>
+                            <p class="area">{{contact.area}}</p>
+                        </div>
+                        <div class="qrcode-container">
+                            <img class="qrcode-img" :src="contact.qrcode" />
+                            <p class="tip">长按添加微信</p>
+                        </div>
+                        <div class="contact-way">
+                            <p>{{contact.phone}}</p>
+                            <p>{{contact.email}}</p>
+                        </div>
+                    </div>
+                    <div class="split"></div>
+                    <h2 class="title">了解更多</h2>
+                    <div class="contact-item">
+                        <div class="basic-info">
+                            <p class="title">微景农家</p>
+                        </div>
+                        <div class="qrcode-container">
+                            <img class="qrcode-img" src="./images/wechat-public-nongjia.png" />
+                            <p class="tip">长按关注公众号</p>
+                        </div>
+                        <div class="contact-way">
+                            <p>010-62440010</p>
+                            <p>北京市海淀区西土城路10号</p>
+                            <p>北邮科技大厦301室</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-content" v-if="menu === 'agent'">
+                    <p class="agent-summary">微景农家合作商户已覆盖北京、天津、河北及重庆等城市周边超过50个区域。正在全国范围内寻求真诚可靠的合作伙伴与团队成员，互惠互利、共同开拓、共同成长！</p>
+                    <div class="split"></div>
+                    <div class="flow-container">
+                        <div class="step" v-for="(step, index) in flowInfo" :class="'step-' + (index + 1)">
+                            <div class="flow-order">{{index + 1}}</div>
+                            <div class="title">{{step.title}}</div>
+                            <div v-if="step.detail && step.detail.length > 0" v-for="item in step.detail"
+                                 class="detail-item">
+                                {{item}}
+                            </div>
+                        </div>
+                    </div>
+                    <a class="button" href="tel:15210333170">联系渠道经理洽谈合作</a>
+                    <a class="button" download href="javascript:void(0)">下载完整说明（3.4MB）</a>
+                </div>
+            </div>
+    </div>
+
+<script>
+    document.querySelector('.banner').style.height = window.innerHeight + 45 + "px";
+    var baseWidth = 375;
+    var size = window.innerWidth * 100 / baseWidth ;
+    if(window.innerWidth > 900 && window.innerWidth > window.innerHeight) {
+        size = 200; // 750 / 375 * 2
+    }
+    document.querySelector("html").style["font-size"] = size + 'px';
+    document.querySelector("body").style["font-size"] = size + 'px';
+</script>
+<script type="text/javascript" src="./plugins/vue/vue@2.2.1.js"></script>
+<script type="text/javascript" src="./plugins/vue-resource/vue-resource@1.2.1.min.js"></script>
+<script type='text/javascript' src='./plugins/iscroll/iscroll.probe.js'></script>
+<script type="text/javascript" src="./scripts/index.js"></script>
+</body>
+</html>

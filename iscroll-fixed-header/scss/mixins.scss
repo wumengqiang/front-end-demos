@@ -1,0 +1,111 @@
+/*  some attribute which listed below don't need compatible mixin,
+    All CSS2.1 property
+    border-radius
+
+ */
+
+
+
+/********** 浏览器兼容部分 start**********/
+@mixin transform($value...){
+    -webkit-transform: $value;
+    transform: $value;
+}
+
+@mixin transition($value){
+    -webkit-transition: $value;
+    -moz-transition: $value;
+    transition: $value;
+}
+
+@mixin backface-visibility($value: hidden){
+    -webkit-backface-visibility: $value;
+    -moz-backface-visibility: $value;
+    backface-visibility: $value;
+}
+
+@mixin display-flex(){
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@mixin flex-grow($value){
+    -webkit-box-flex: $value;
+    -moz-box-flex: $value;
+    box-flex: $value;
+    -webkit-flex-grow: $value;
+    flex-grow: $value;
+}
+
+
+@mixin flex-shrink($value){
+    -webkit-box-pack: $value;
+    -moz-box-pack: $value;
+    box-pack: $value;
+    -webkit-flex-shrink: $value;
+    flex-shrink: $value;
+}
+@mixin flex-direction($value){
+    $direction: if($value == row , horizontal, vertical);
+    -moz-box-orient: $direction ;
+    -webkit-box-orient: $direction;
+    box-orient: $direction;
+    -webkit-flex-direction: $value;
+    flex-direction: $value;
+}
+
+@mixin flex-wrap($value){
+    $compatible-value: if($value == nowrap, single, multiple);
+    -webkit-box-lines: $compatible-value;
+    -moz-box-lines: $compatible-value;
+    box-lines: $compatible-value;
+    -webkit-flex-wrap: $value;
+    flex-wrap: $value;
+
+}
+
+@mixin order($value){
+    -webkit-box-ordinal-group: $value;
+    -moz-box-ordinal-group: $value;
+    -ms-flex-order: $value;
+    -webkit-order: $value;
+    order: $value;
+}
+
+/********** 浏览器兼容部分 end**********/
+
+
+
+@mixin mobile-font-family(){
+    font-family:
+    -apple-system, // OSX ^10.11 & iOS ^9 San Francisco & 苹方
+        // English First
+
+    "Helvetica Neue", // OSX
+    Roboto, // Android 4.0以上
+    "Droid Sans", // Android 4.0以下
+    "Arial", // Win
+    "Helvetica", //
+    "Segoe UI", // Win ^8
+
+        // Chinese Fallback
+    "PingFangSC-Regular",
+    "PingFang SC", // OSX ^10.11 & iOS ^9 苹方（华康信凭黑）
+    "Hiragino Sans GB", // OSX ^10.6 冬青黑体
+    "STHeiti", // OSX <10.6 & iOS <9 华文黑体
+    "Heiti SC",
+    "Microsoft YaHei", // Win 微软雅黑
+    "Microsoft JhengHei", // Win 微软正黑
+    "Source Han Sans SC", // SourceHan - begin 思源黑体
+    "Noto Sans CJK SC",
+    "Source Han Sans CN",
+    "Noto Sans SC",
+    "Source Han Sans TC",
+    "Noto Sans CJK TC", // SourceHan - end
+    "Microsoft Yahei",
+    "微软雅黑",
+    sans-serif; // System Fallback
+}

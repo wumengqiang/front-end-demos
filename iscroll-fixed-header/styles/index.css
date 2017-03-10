@@ -1,0 +1,371 @@
+@charset "UTF-8";
+/*  some attribute which listed below don't need compatible mixin,
+    All CSS2.1 property
+    border-radius
+
+ */
+/********** 浏览器兼容部分 start**********/
+/********** 浏览器兼容部分 end**********/
+button, a {
+  -webkit-tap-highlight-color: transparent; }
+
+a {
+  text-decoration: none; }
+
+[v-cloak] {
+  display: none; }
+
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: -apple-system, "Helvetica Neue", Roboto, "Droid Sans", "Arial", "Helvetica", "Segoe UI", "PingFangSC-Regular", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Heiti SC", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "Microsoft Yahei", "微软雅黑", sans-serif; }
+
+/******** 公共样式 ************/
+p {
+  margin: 0; }
+
+.split {
+  display: block;
+  margin: .33rem 0;
+  height: 0;
+  border-top: 1px solid #E4E4E5; }
+
+.split-lg {
+  display: block;
+  margin: .5rem .2rem .42rem;
+  height: 0;
+  border-top: 1px solid #E4E4E5; }
+
+.title {
+  font-family: PingFangSC-Semibold;
+  font-weight: bold;
+  color: #4A4A4A;
+  line-height: 1; }
+
+/******** 非公共样式 *********/
+.container {
+  font-size: 14px;
+  width: 100%; }
+  .container .banner {
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    box-flex: 0;
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
+    -webkit-box-pack: 0;
+    -moz-box-pack: 0;
+    box-pack: 0;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden; }
+    .container .banner.animation-over {
+      position: absolute;
+      z-index: 2; }
+    .container .banner.banner-open {
+      height: 4.83rem !important;
+      -webkit-transition: height 2s;
+      -moz-transition: height 2s;
+      transition: height 2s; }
+      .container .banner.banner-open .banner-bg {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transition: transform 2s;
+        -moz-transition: transform 2s;
+        transition: transform 2s; }
+      .container .banner.banner-open .banner-vb {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        -webkit-transition: transform 0.8s 0.4s ease-out;
+        -moz-transition: transform 0.8s 0.4s ease-out;
+        transition: transform 0.8s 0.4s ease-out; }
+    .container .banner .banner-bg {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      backface-visibility: hidden;
+      height: 100%;
+      width: 100%;
+      background: url(../images/banner-bg.png) center center no-repeat;
+      background-size: cover; }
+    .container .banner .icon-nongjia {
+      position: absolute;
+      width: .64rem;
+      height: .54rem;
+      left: 0;
+      right: 0;
+      top: .88rem;
+      margin: 0 auto;
+      background: url(../images/logo-nongjia.png) center center no-repeat;
+      background-size: contain; }
+    .container .banner .banner-vb {
+      -webkit-transform: translateX(1.4rem);
+      transform: translateX(1.4rem);
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      backface-visibility: hidden;
+      position: absolute;
+      top: .2rem;
+      right: .39rem;
+      width: 1rem;
+      height: 1.64rem;
+      background: url(../images/banner-vb.png) center center no-repeat;
+      background-size: contain; }
+    .container .banner .menu-wrapper {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0); }
+    .container .banner .menu {
+      display: block;
+      font-family: STKaiti;
+      list-style: none;
+      color: white;
+      font-size: 18px;
+      margin: 0 .2rem;
+      padding: 0;
+      letter-spacing: 0;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: .12rem .12rem 0 0;
+      position: relative;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex; }
+      .container .banner .menu .menu-bg {
+        display: inline-block;
+        background-color: #00b162;
+        border-radius: .12rem .12rem 0 0;
+        height: 100%;
+        width: 100%;
+        transition: transform .5s;
+        position: absolute;
+        left: 0;
+        top: 0; }
+        .container .banner .menu .menu-bg.menu-farmhouse {
+          transform: translateX(100%); }
+        .container .banner .menu .menu-bg.menu-contactus {
+          transform: translateX(100%); }
+        .container .banner .menu .menu-bg.menu-agent {
+          transform: translateX(200%); }
+      .container .banner .menu li {
+        -webkit-box-flex: 1;
+        -moz-box-flex: 1;
+        box-flex: 1;
+        -webkit-flex-grow: 1;
+        flex-grow: 1;
+        position: relative;
+        z-index: 2;
+        font-weight: lighter;
+        display: inline-block;
+        line-height: 45px;
+        text-align: center; }
+        .container .banner .menu li .name {
+          position: relative;
+          z-index: 10; }
+  .container .content {
+    font-size: 15px;
+    color: #5d5d5d;
+    line-height: 27px;
+    margin: 0 .2rem;
+    overflow-x: visible;
+    letter-spacing: 1px; }
+    .container .content .introduce-summary,
+    .container .content .contactus-summary,
+    .container .content .farmhouse-summary,
+    .container .content .agent-summary {
+      margin-top: .25rem; }
+    .container .content .part .title {
+      font-size: 24px; }
+      .container .content .part .title .order {
+        display: inline-block;
+        position: relative;
+        top: 2px;
+        font-size: 36px;
+        letter-spacing: 5px; }
+      .container .content .part .title .title-content {
+        display: inline-block;
+        margin-left: -6px; }
+    .container .content .part .summary {
+      margin: .2rem auto; }
+    .container .content .part .feature {
+      display: inline-block; }
+      .container .content .part .feature .title {
+        font-size: 18px;
+        line-height: 1;
+        margin: 0 0 .1rem 10px; }
+      .container .content .part .feature .list-item {
+        position: relative;
+        padding-left: 10px;
+        max-width: 80%; }
+        .container .content .part .feature .list-item:before {
+          content: ' ';
+          height: 6px;
+          width: 6px;
+          border-radius: 50%;
+          background: #00b162;
+          position: absolute;
+          left: 0px;
+          top: 10.5px; }
+
+/********  产品介绍 **************/
+.menu-introduce {
+  padding-bottom: .5rem; }
+  .menu-introduce .introduce-pano {
+    overflow-x: visible;
+    position: relative; }
+    .menu-introduce .introduce-pano .feature {
+      display: inline-block;
+      position: absolute;
+      top: .5rem; }
+    .menu-introduce .introduce-pano .pano-example {
+      float: right;
+      display: block;
+      height: 3.43rem;
+      width: 1.65rem;
+      -webkit-transform: translateX(0.5rem);
+      transform: translateX(0.5rem); }
+    .menu-introduce .introduce-pano .list-item {
+      max-width: 69% !important; }
+  .menu-introduce .introduce-navigation {
+    overflow-y: visible;
+    position: relative;
+    clear: both; }
+    .menu-introduce .introduce-navigation .navigation-example {
+      height: 3.61rem;
+      width: 1.65rem;
+      -webkit-transform: translateX(-0.5rem) translateY(-0.9rem);
+      transform: translateX(-0.5rem) translateY(-0.9rem); }
+    .menu-introduce .introduce-navigation .feature {
+      display: inline-block;
+      width: 1.80rem;
+      top: .7rem;
+      right: .07rem;
+      position: absolute; }
+  .menu-introduce .text-pic {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: .35rem; }
+    .menu-introduce .text-pic.text-pic-farm-introduce {
+      margin-top: -0.45rem; }
+    .menu-introduce .text-pic .feature {
+      -webkit-box-flex: 1;
+      -moz-box-flex: 1;
+      box-flex: 1;
+      -webkit-flex-grow: 1;
+      flex-grow: 1;
+      -webkit-box-pack: 1;
+      -moz-box-pack: 1;
+      box-pack: 1;
+      -webkit-flex-shrink: 1;
+      flex-shrink: 1; }
+    .menu-introduce .text-pic .example-pic {
+      -webkit-box-flex: 0;
+      -moz-box-flex: 0;
+      box-flex: 0;
+      -webkit-flex-grow: 0;
+      flex-grow: 0;
+      -webkit-box-pack: 0;
+      -moz-box-pack: 0;
+      box-pack: 0;
+      -webkit-flex-shrink: 0;
+      flex-shrink: 0;
+      display: inline-block;
+      width: 1.25rem;
+      height: .95rem;
+      margin: -.1rem 0 0 .1rem; }
+  .menu-introduce .example-manage-tool {
+    width: 100%; }
+
+.menu-contactus {
+  padding-bottom: .5rem; }
+  .menu-contactus .title {
+    font-size: 24px;
+    margin-bottom: .3rem; }
+  .menu-contactus .contact-item {
+    position: relative;
+    padding: .2rem .2rem;
+    margin-bottom: .2rem;
+    overflow: hidden;
+    background-color: #F8F8F8;
+    border-radius: 1px;
+    height: 1.36rem; }
+    .menu-contactus .contact-item .basic-info {
+      display: inline-block;
+      width: 50%; }
+      .menu-contactus .contact-item .basic-info .title {
+        font-size: 18px;
+        margin: 0; }
+    .menu-contactus .contact-item .qrcode-container {
+      width: .82rem;
+      float: right; }
+      .menu-contactus .contact-item .qrcode-container .qrcode-img {
+        height: .82rem;
+        width: 0.82rem; }
+      .menu-contactus .contact-item .qrcode-container .tip {
+        width: 140%;
+        text-align: center;
+        font-size: 12px;
+        color: #b1b1b1;
+        transform: translateX(-14.28%); }
+    .menu-contactus .contact-item .contact-way {
+      position: absolute;
+      bottom: .2rem;
+      left: .2rem; }
+
+.agent-content {
+  padding-bottom: .7rem; }
+  .agent-content .flow-container .step {
+    position: relative;
+    padding: 0 0 .3rem .28rem;
+    margin-left: .1rem;
+    border-left: 1px solid #00b162; }
+    .agent-content .flow-container .step:last-child {
+      border: none;
+      padding-bottom: .6rem; }
+    .agent-content .flow-container .step .flow-order {
+      height: 26px;
+      width: 26px;
+      line-height: 26px;
+      border-radius: 50%;
+      background-color: #00b162;
+      position: absolute;
+      text-align: center;
+      font-size: 18px;
+      color: white;
+      top: 0;
+      left: 0;
+      -webkit-transform: translateX(-50%) translateY(-5px);
+      transform: translateX(-50%) translateY(-5px); }
+    .agent-content .flow-container .step .title {
+      line-height: 1;
+      font-size: 18px;
+      margin: 0 0 .15rem 0; }
+  .agent-content .button {
+    display: block;
+    height: .5rem;
+    line-height: .5rem;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    margin-bottom: .3rem;
+    background: #00b162;
+    border-radius: 4px; }
+
+/********* 根据media样式微调 ********/
+@media screen and (max-width: 374px) {
+  .menu-contactus .contact-item .contact-way {
+    font-size: 13px; } }

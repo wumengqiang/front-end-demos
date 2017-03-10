@@ -1,0 +1,433 @@
+@import "./mixins.scss";
+@import "./variables.scss";
+
+
+button,a{
+    -webkit-tap-highlight-color: transparent;
+}
+
+a{
+    text-decoration: none;
+}
+
+[v-cloak]{
+    display: none;
+}
+
+html, body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    @include mobile-font-family();
+}
+
+/******** 公共样式 ************/
+
+p{
+    margin: 0;
+}
+
+.split{
+    display: block;
+    margin: .33rem 0;
+    height: 0;
+    border-top: 1px solid #E4E4E5;
+}
+
+.split-lg{
+    display: block;
+    margin: .5rem .2rem .42rem;
+    height: 0;
+    border-top: 1px solid #E4E4E5;
+}
+
+.title{
+    font-family: PingFangSC-Semibold;
+    font-weight: bold;
+    color: #4A4A4A;
+    line-height: 1;
+}
+
+/******** 非公共样式 *********/
+
+.container{
+
+
+    font-size: 14px;
+    width: 100%;
+    .banner{
+        @include flex-grow(0);
+        @include flex-shrink(0);
+
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        @include backface-visibility(hidden);
+
+
+        &.animation-over{
+            position: absolute;
+            z-index: 2;
+        }
+        &.banner-open{
+            height: 4.83rem !important;
+            @include transition(height 2s);
+            .banner-bg{
+                @include transform(scale(1));
+                @include transition(transform 2s);
+
+            }
+
+            .banner-vb{
+                @include transform(translateX(0));
+                @include transition(transform .8s .4s ease-out);
+
+            }
+        }
+
+        .banner-bg{
+            @include transform(scale(1.2));
+            @include backface-visibility(hidden);
+
+            height: 100%;
+            width: 100%;
+            background: url(../images/banner-bg.png) center center no-repeat;
+            background-size: cover;
+        }
+
+        .icon-nongjia {
+            position: absolute;
+            width: .64rem;
+            height: .54rem;
+            left: 0;
+            right: 0;
+            top: .88rem;
+            margin: 0 auto;
+            background: url(../images/logo-nongjia.png) center center no-repeat;
+            background-size: contain;
+        }
+
+        .banner-vb {
+            @include transform(translateX(1.40rem));
+            @include backface-visibility(hidden);
+
+            position: absolute;
+            top: .2rem;
+            right: .39rem;
+            width: 1rem;
+            height: 1.64rem;
+
+            background: url(../images/banner-vb.png) center center no-repeat;
+            background-size: contain;
+        }
+
+        .menu-wrapper{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            @include transform(translateZ(0));
+        }
+
+        .menu{
+            display: block;
+            font-family: STKaiti;
+            list-style: none;
+            color: white;
+            font-size: 18px;
+            margin: 0 .2rem;
+            padding: 0;
+            letter-spacing: 0;
+            background-color: rgba(255,255,255, 0.3);
+            border-radius: .12rem .12rem 0 0;
+            position: relative;
+
+            @include display-flex();
+
+            .menu-bg{
+                display: inline-block;
+                background-color: #00b162;
+                border-radius: .12rem .12rem 0 0;
+                height: 100%;
+                width: 100%;
+                transition: transform .5s;
+                position: absolute;
+                left: 0;
+                top: 0;
+                &.menu-farmhouse{
+                    transform: translateX(100%);
+                }
+                &.menu-contactus{
+                    transform: translateX(100%);
+                }
+                &.menu-agent{
+                    transform: translateX(200%);
+                }
+
+            }
+
+            li{
+                @include flex-grow(1);
+
+                position: relative;
+                z-index: 2;
+                font-weight: lighter;
+                display: inline-block;
+                line-height: 45px;
+                text-align: center;
+
+                .name {
+                    position: relative;
+                    z-index: 10;
+                }
+            }
+        }
+    }
+
+    .content{
+        font-size: 15px;
+        color: $content-color;
+        line-height: 27px;
+        margin: 0 .2rem;
+        overflow-x: visible;
+        letter-spacing: 1px;
+        .introduce-summary,
+        .contactus-summary,
+        .farmhouse-summary,
+        .agent-summary{
+            margin-top: .25rem;
+        }
+
+        .part{
+            .title{
+                font-size: 24px;
+                .order{
+                    display: inline-block;
+                    position: relative;
+                    top: 2px;
+
+                    font-size: 36px;
+                    letter-spacing: 5px;
+                }
+                .title-content{
+                    display: inline-block;
+                    margin-left: -6px;
+                }
+            }
+
+            .summary{
+                margin: .2rem auto;
+            }
+
+            .feature{
+                display: inline-block;
+                .title{
+
+                    font-size: 18px;
+                    line-height: 1;
+                    margin: 0 0 .1rem 10px;
+                }
+                .list-item{
+                    position: relative;
+                    padding-left: 10px;
+                    max-width: 80%;
+
+                    &:before {
+                        content: ' ';
+                        height: 6px;
+                        width: 6px;
+                        border-radius: 50%;
+                        background: #00b162;
+                        position: absolute;
+                        left: 0px;
+                        top: 10.5px;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+/********  产品介绍 **************/
+.menu-introduce{
+    padding-bottom: .5rem;
+    .introduce-pano{
+        overflow-x: visible;
+        position: relative;
+        .feature{
+            display: inline-block;
+            position: absolute;
+            top: .5rem;
+        }
+        .pano-example{
+            float: right;
+            display: block;
+            height: 3.43rem;
+            width: 1.65rem;
+            @include transform(translateX(.5rem));
+        }
+        .list-item{
+            max-width: 69% !important;
+        }
+    }
+
+    .introduce-navigation{
+        overflow-y: visible;
+        position: relative;
+        clear: both;
+        .navigation-example{
+            height: 3.61rem;
+            width: 1.65rem;
+            @include transform(translateX(-.5rem) translateY(-.9rem));
+        }
+        .feature{
+            display: inline-block;
+            width: 1.80rem;
+            top: .7rem;
+            right: .07rem;
+            position: absolute;
+        }
+    }
+
+    .text-pic{
+        @include display-flex();
+        margin-top: .35rem;
+
+        &.text-pic-farm-introduce{
+            margin-top: - .45rem;
+        }
+
+        .feature{
+            @include flex-grow(1);
+            @include flex-shrink(1);
+        }
+
+        .example-pic{
+            @include flex-grow(0);
+            @include flex-shrink(0);
+            display: inline-block;
+            width: 1.25rem;
+            height: .95rem;
+            margin: -.1rem 0 0 .1rem;
+        }
+    }
+
+
+    .example-manage-tool{
+        width: 100%;
+    }
+
+}
+
+.menu-contactus{
+    padding-bottom: .5rem;
+
+    .title{
+        font-size: 24px;
+        margin-bottom: .3rem;
+    }
+    .contact-item{
+        position: relative;
+        padding: .2rem .2rem;
+        margin-bottom: .2rem;
+        overflow: hidden;
+
+        background-color: $bg-gray;
+        border-radius: 1px;
+        height: 1.36rem;
+        .basic-info{
+            display: inline-block;
+            width: 50%;
+            .title{
+                font-size: 18px;
+                margin: 0;
+            }
+        }
+
+
+        .qrcode-container{
+            width: .82rem;
+            float: right;
+            .qrcode-img{
+                height: .82rem;
+                width: .82rem
+            }
+            .tip{
+                width: 140%;
+                text-align: center;
+                font-size: 12px;
+                color: #b1b1b1;
+                transform: translateX(-14.28%);
+            }
+        }
+
+        .contact-way{
+            position: absolute;
+            bottom: .2rem;
+            left: .2rem;
+        }
+
+
+    }
+}
+
+.agent-content{
+    padding-bottom: .7rem;
+    .flow-container{
+        .step{
+            position: relative;
+            padding: 0 0 .3rem .28rem;
+            margin-left: .1rem;;
+            border-left: 1px solid $green;
+            &:last-child{
+                border: none;
+                padding-bottom: .6rem;
+            }
+            .flow-order{
+                height: 26px;
+                width: 26px;
+                line-height: 26px;
+
+                border-radius: 50%;
+                background-color: $green;
+                position: absolute;
+                text-align: center;
+                font-size: 18px;
+                color: white;
+                top: 0;
+                left: 0;
+
+                @include transform(translateX(-50%) translateY(-5px));
+            }
+            
+            .title{
+                line-height: 1;
+                font-size: 18px;
+                margin: 0 0 .15rem 0;
+            }
+
+        }
+    }
+    .button{
+        display: block;
+        height: .5rem;
+        line-height: .5rem;
+        text-align: center;
+        color: white;
+        font-size: 18px;
+        margin-bottom: .3rem;
+        background: $green;
+        border-radius: 4px;
+    }
+}
+
+/********* 根据media样式微调 ********/
+
+@media screen and (max-width: 374px){
+    .menu-contactus .contact-item .contact-way{
+        font-size: 13px;
+    }
+}
