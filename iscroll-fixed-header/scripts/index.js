@@ -65,6 +65,7 @@ document.querySelector('.container').addEventListener('touchmove', function (e) 
 				this.loadImages();
 			},
 			handleChangeMenu: function(menu){
+				return;
 				if(this.animationOver && this.menu != menu){
 					this.menu = menu;
 					Vue.nextTick(function(){

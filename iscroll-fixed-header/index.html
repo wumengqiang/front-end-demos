@@ -20,8 +20,8 @@
                         <span class='menu-bg' :class="'menu-' + menu"></span>
                         <span class="name">产品介绍</span>
                     </li>
-                    <li @click="handleChangeMenu('contactus')">联系我们</li>
-                    <li  @click="handleChangeMenu('agent')">代理合作</li>
+                    <li @click="handleChangeMenu('contactus')">产品介绍</li>
+                    <li  @click="handleChangeMenu('agent')">产品介绍</li>
                 </ul>
             </div>
         </div>
@@ -112,63 +112,6 @@
                         <img class="lazy-load example-manage-tool" data-src="./images/example-training.png"/>
                     </div>
                     <div class="split-lg"></div>
-                </div>
-                <div class="menu-farmhouse-example" v-if="menu === 'farmhouse'">
-
-                    <div class="farmhouse-group">
-                        <div class="title">北京</div>
-                    </div>
-                </div>
-                <div class="menu-contactus" v-if="menu === 'contactus'">
-                    <p  class="contactus-summary">我们希望您与客人之间建立有效的沟通渠道，帮助您不断提升在行业中的竞争力。欢迎您随时与我们取得联系共商解决方案。</p>
-                    <div class="split"></div>
-                    <h2 class="title">洽谈合作</h2>
-                    <div class="contact-item" v-for="contact in contactList">
-                        <div class="basic-info">
-                            <p class="title">{{contact.name}}</p>
-                            <p class="area">{{contact.area}}</p>
-                        </div>
-                        <div class="qrcode-container">
-                            <img class="qrcode-img" :src="contact.qrcode" />
-                            <p class="tip">长按添加微信</p>
-                        </div>
-                        <div class="contact-way">
-                            <p>{{contact.phone}}</p>
-                            <p>{{contact.email}}</p>
-                        </div>
-                    </div>
-                    <div class="split"></div>
-                    <h2 class="title">了解更多</h2>
-                    <div class="contact-item">
-                        <div class="basic-info">
-                            <p class="title">微景农家</p>
-                        </div>
-                        <div class="qrcode-container">
-                            <img class="qrcode-img" src="./images/wechat-public-nongjia.png" />
-                            <p class="tip">长按关注公众号</p>
-                        </div>
-                        <div class="contact-way">
-                            <p>010-62440010</p>
-                            <p>北京市海淀区西土城路10号</p>
-                            <p>北邮科技大厦301室</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="agent-content" v-if="menu === 'agent'">
-                    <p class="agent-summary">微景农家合作商户已覆盖北京、天津、河北及重庆等城市周边超过50个区域。正在全国范围内寻求真诚可靠的合作伙伴与团队成员，互惠互利、共同开拓、共同成长！</p>
-                    <div class="split"></div>
-                    <div class="flow-container">
-                        <div class="step" v-for="(step, index) in flowInfo" :class="'step-' + (index + 1)">
-                            <div class="flow-order">{{index + 1}}</div>
-                            <div class="title">{{step.title}}</div>
-                            <div v-if="step.detail && step.detail.length > 0" v-for="item in step.detail"
-                                 class="detail-item">
-                                {{item}}
-                            </div>
-                        </div>
-                    </div>
-                    <a class="button" href="tel:15210333170">联系渠道经理洽谈合作</a>
-                    <a class="button" download href="javascript:void(0)">下载完整说明（3.4MB）</a>
                 </div>
             </div>
     </div>
