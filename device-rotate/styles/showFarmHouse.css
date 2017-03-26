@@ -1,0 +1,626 @@
+@charset "UTF-8";
+/*  some attribute which listed below don't need compatible mixin,
+    All CSS2.1 property
+    border-radius
+
+ */
+/********** 浏览器兼容部分 start**********/
+/********** 浏览器兼容部分 end**********/
+body {
+  font-family: -apple-system, "Helvetica Neue", Roboto, "Droid Sans", "Arial", "Helvetica", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Heiti SC", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "Microsoft Yahei", "微软雅黑", sans-serif;
+  background-color: white; }
+
+body > div {
+  font-size: 14px; }
+
+.no-scroll {
+  overflow: hidden; }
+
+.no-touch {
+  pointer-events: none; }
+
+.left-pos {
+  -moz-transform: translateX(-100%) !important;
+  -webkit-transform: translateX(-100%) !important;
+  transform: translateX(-100%) !important; }
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden; }
+
+.isQianLong {
+  position: relative;
+  width: 100%;
+  height: .6rem;
+  overflow: hidden;
+  -webkit-flex-basis: .6rem;
+  flex-basis: .6rem;
+  -webkit-box-flex: 0;
+  -webkit-flex: none;
+  flex: none;
+  line-height: 0;
+  z-index: 1000;
+  margin: 0;
+  padding: 0; }
+  .isQianLong .download-pic {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(../images/farmhouse/download-qianlongwang.png) center center no-repeat;
+    background-size: cover; }
+  .isQianLong .download-mask {
+    position: absolute;
+    right: 5.87%;
+    bottom: 26%;
+    height: 44%;
+    width: 25%;
+    opacity: 0; }
+  .isQianLong .icon-qianlong-close {
+    position: absolute;
+    z-index: 1;
+    right: .03rem;
+    top: .03rem;
+    height: 20px;
+    width: 20px;
+    background: url(../images/farmhouse/icon-close-qianlongwang.png) top right no-repeat;
+    background-size: .16rem .16rem; }
+
+.page-container {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  width: 100%;
+  position: relative; }
+  .page-container .all-features,
+  .page-container .imgs-view,
+  .page-container .notice-detail {
+    left: 100%;
+    width: 100%; }
+  .page-container.aim-to-reflow {
+    left: -1px; }
+
+.page-main {
+  will-change: transform;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  overflow: scroll; }
+  .page-main.show-download {
+    margin-bottom: .7rem; }
+  .page-main .farmhouse-info {
+    position: relative; }
+    .page-main .farmhouse-info header {
+      width: 100%;
+      height: 2.3rem;
+      overflow: hidden; }
+    .page-main .farmhouse-info .header-info {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2.3rem;
+      overflow: hidden;
+      background: transparent;
+      z-index: 1000;
+      transform: translateZ(0); }
+      .page-main .farmhouse-info .header-info .header-mask {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: .93rem;
+        width: 100%;
+        background-image: -webkit-linear-gradient(-180deg, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+        background-image: linear-gradient(-180deg, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+        z-index: 100; }
+      .page-main .farmhouse-info .header-info .name {
+        position: absolute;
+        bottom: .2rem;
+        left: .2rem;
+        z-index: 200;
+        max-width: 3.0rem;
+        word-break: break-all;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+        font-weight: bold;
+        color: white;
+        font-size: 23px;
+        line-height: 1; }
+      .page-main .farmhouse-info .header-info .pano-tip {
+        position: absolute;
+        bottom: .2rem;
+        right: .2rem;
+        z-index: 200;
+        color: white !important;
+        font-size: 12px; }
+  .page-main .icon-arrow-right {
+    float: right;
+    width: .06rem;
+    height: .1rem;
+    margin-top: .04rem;
+    display: inline-block;
+    background: url(../images/farmhouse/icon-arrow-right@2x.png) center right no-repeat;
+    background-size: contain; }
+  .page-main .icon-arrow-bottom {
+    width: .06rem;
+    height: .1rem;
+    display: inline-block;
+    background: url(../images/farmhouse/icon-arrow-right@2x.png) center right no-repeat;
+    background-size: contain;
+    transform: translate(0, -0.11rem) rotate(90deg);
+    margin-left: 5px; }
+  .page-main .icon-arrow-top {
+    width: .06rem;
+    height: .1rem;
+    display: inline-block;
+    background: url(../images/farmhouse/icon-arrow-right@2x.png) center right no-repeat;
+    background-size: contain;
+    transform: translate(0, -0.125rem) rotate(-90deg);
+    margin-left: 3px; }
+  .page-main .address-container {
+    padding: .16rem .2rem 0; }
+    .page-main .address-container .icon-location {
+      display: inline-block;
+      vertical-align: top;
+      height: .14rem;
+      width: .12rem;
+      background: url(../images/farmhouse/icon_location@2x.png) top center no-repeat;
+      background-size: contain;
+      margin: 0 .04rem 0 0; }
+    .page-main .address-container .address {
+      display: inline-block;
+      width: 2.71rem;
+      font-size: 14px;
+      color: #5D5D5D;
+      line-height: 18px;
+      margin-top: -2px;
+      vertical-align: top; }
+  .page-main .phone-container {
+    padding: .16rem .2rem 0;
+    display: block; }
+    .page-main .phone-container .icon-phone {
+      display: inline-block;
+      vertical-align: top;
+      height: .14rem;
+      width: .14rem;
+      background: url(../images/farmhouse/icon-phone@2x.png) center center no-repeat;
+      background-size: contain;
+      margin: 0 .04rem 0 0; }
+    .page-main .phone-container .phonenum {
+      display: inline-block;
+      width: 2.71rem;
+      font-size: 14px;
+      color: #5D5D5D;
+      line-height: 14px;
+      vertical-align: top; }
+  .page-main .open-date-container {
+    padding: .16rem .2rem 0; }
+    .page-main .open-date-container .icon-calendar {
+      display: inline-block;
+      vertical-align: top;
+      height: .14rem;
+      width: .14rem;
+      background: url(../images/farmhouse/icon-calendar-green@2x.png) center center no-repeat;
+      background-size: contain;
+      margin-right: .04rem; }
+    .page-main .open-date-container .open-info {
+      display: inline-block;
+      vertical-align: top;
+      width: 2.71rem;
+      font-size: 14px;
+      color: #5D5D5D;
+      line-height: 14px; }
+  .page-main .features-container {
+    margin: .36rem .2rem 0;
+    padding-bottom: .3rem;
+    border-bottom: 1px solid #e4e4e5; }
+    .page-main .features-container .icon-arrow-right {
+      margin-top: .2rem; }
+    .page-main .features-container .feature {
+      display: inline-block;
+      vertical-align: top;
+      height: .5rem;
+      width: .5rem;
+      border: 1px solid #e4e4e5;
+      border-radius: 50%;
+      font-size: 14px;
+      color: #5d5d5d; }
+      .page-main .features-container .feature + .feature {
+        margin-left: .3rem; }
+      .page-main .features-container .feature .name {
+        display: block;
+        line-height: .5rem;
+        text-align: center; }
+        .page-main .features-container .feature .name.gt-3-words {
+          line-height: 16px;
+          width: .4rem;
+          padding-top: .09rem;
+          margin: 0 auto; }
+  .page-main .notice {
+    margin: 0 .2rem;
+    border-bottom: 1px solid #e4e4e5; }
+    .page-main .notice .content {
+      position: relative;
+      padding: .15rem 0;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      box-orient: hotizntal;
+      box-align: center;
+      align-items: center; }
+      .page-main .notice .content .icon-notice {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: .16rem;
+        height: 26px;
+        width: 30px;
+        background: url(../images/farmhouse/icon-notice@2x.png) center center no-repeat;
+        background-size: contain; }
+      .page-main .notice .content .msg-container {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 18px;
+        font-size: 14px;
+        -webkit-box-flex: 1;
+        /* OLD - iOS 6-, Safari 3.1-6 */
+        -moz-box-flex: 1;
+        /* OLD - Firefox 19- */
+        width: 20%;
+        /* For old syntax, otherwise collapses. 设置每个子元素宽度20%*/
+        -webkit-flex: 1;
+        /* Chrome */
+        -ms-flex: 1;
+        /* IE 10 */
+        flex: 1; }
+        .page-main .notice .content .msg-container .msg {
+          display: block;
+          display: -webkit-box;
+          max-height: 36px;
+          overflow: hidden;
+          -ms-text-overflow: ellipsis;
+          text-overflow: ellipsis;
+          white-space: pre-wrap;
+          word-break: break-all;
+          word-wrap: break-word;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          color: #5d5d5d; }
+      .page-main .notice .content .icon-arrow-right {
+        float: none;
+        width: 20px; }
+  .page-main .person-info {
+    padding: .3rem .2rem 0; }
+    .page-main .person-info .portrait {
+      display: inline-block;
+      height: .6rem;
+      width: .6rem;
+      border-radius: 50%;
+      vertical-align: middle; }
+    .page-main .person-info .name {
+      display: inline-block;
+      vertical-align: middle;
+      color: #5d5d5d;
+      padding-left: .12rem; }
+      .page-main .person-info .name .person-name {
+        font-size: 18px; }
+      .page-main .person-info .name .person-role {
+        display: inline-block;
+        padding-top: .05rem;
+        font-size: 12px; }
+  .page-main .introduce {
+    position: relative;
+    transform: translateZ(0);
+    display: block;
+    max-height: 168px;
+    line-height: 28px;
+    font-size: 15px;
+    color: #5D5D5D;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: .13rem .2rem 0;
+    transition: max-height .5s ease-in-out; }
+  .page-main .show-more {
+    padding: 0 .2rem;
+    text-align: right;
+    position: relative;
+    left: -.05rem; }
+    .page-main .show-more .tip-text {
+      display: inline-block;
+      vertical-align: bottom;
+      color: #00B162;
+      font-size: 14px;
+      letter-spacing: 1px;
+      line-height: .4rem; }
+  .page-main .pictures {
+    position: relative;
+    margin: .25rem .2rem 0;
+    height: 2.5rem; }
+    .page-main .pictures .pic-mask {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, transparent 100%); }
+    .page-main .pictures .pic-num {
+      position: absolute;
+      z-index: 1;
+      left: .1rem;
+      bottom: .1rem;
+      font-size: 14px;
+      color: white; }
+  .page-main .title {
+    font-size: 15px;
+    font-weight: bold;
+    color: #5D5D5D;
+    letter-spacing: 0;
+    line-height: 15px;
+    margin: .3rem .2rem .2rem; }
+  .page-main .title.scene {
+    margin-top: .25rem; }
+  .page-main .map-container {
+    position: relative;
+    height: 2rem;
+    margin: 0 .2rem; }
+    .page-main .map-container .map {
+      pointer-events: none;
+      height: 100%;
+      width: 100%; }
+      .page-main .map-container .map > div > div {
+        display: none; }
+        .page-main .map-container .map > div > div:first-child {
+          display: block; }
+    .page-main .map-container .icon-navigator {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      position: absolute;
+      top: .1rem;
+      right: .1rem;
+      height: .3rem;
+      width: .3rem;
+      background: url(../images/farmhouse/icon-navigator@2x.png) center center no-repeat;
+      background-size: contain;
+      z-index: 1000000; }
+  .page-main .scenes_around {
+    padding: 0 .2rem .2rem;
+    font-size: 14px;
+    color: #4A4A4A;
+    letter-spacing: 0;
+    line-height: 14px; }
+    .page-main .scenes_around .scene {
+      padding-bottom: .15rem; }
+      .page-main .scenes_around .scene .long_title {
+        display: inline-block;
+        max-width: 2.3rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        vertical-align: bottom; }
+      .page-main .scenes_around .scene .distance {
+        float: right;
+        font-size: 14px;
+        color: #00B162;
+        line-height: 14px;
+        padding-right: 0.07rem; }
+      .page-main .scenes_around .scene .icon-arrow-right {
+        margin-top: 0.02rem; }
+
+.notice-detail {
+  will-change: transform;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  overflow-y: auto;
+  overflow-x: hidden; }
+
+.all-features {
+  will-change: transform;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  overflow-y: auto;
+  overflow-x: hidden; }
+  .all-features .icon-close {
+    position: absolute;
+    top: .34rem;
+    right: .2rem;
+    height: .16rem;
+    width: .16rem;
+    background: url(../images/farmhouse/icon-close@2x.png) center center no-repeat;
+    background-size: contain; }
+  .all-features .features-container {
+    margin-top: .84rem;
+    text-align: center; }
+  .all-features .title {
+    font-size: 23px;
+    color: #5D5D5D;
+    letter-spacing: 2px;
+    line-height: 23px;
+    margin-bottom: 20px;
+    text-align: center; }
+  .all-features .feature {
+    height: 50px;
+    font-size: 18px;
+    color: #5D5D5D;
+    line-height: 50px;
+    text-align: center; }
+
+.imgs-view {
+  will-change: transform;
+  position: absolute;
+  display: none;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #1a1a1a;
+  overflow: hidden; }
+  .imgs-view .swiper-container {
+    height: 100%;
+    width: 100%; }
+    .imgs-view .swiper-container .icon-close {
+      position: absolute;
+      top: .34rem;
+      right: .2rem;
+      height: .16rem;
+      width: .16rem;
+      background: url(../images/farmhouse/icon-close-white@2x.png) center center no-repeat;
+      background-size: contain;
+      z-index: 999; }
+    .imgs-view .swiper-container .swiper-slide {
+      overflow: hidden; }
+      .imgs-view .swiper-container .swiper-slide img {
+        max-width: 97%;
+        max-height: 60%; }
+    .imgs-view .swiper-container .footer {
+      position: absolute;
+      top: 81%;
+      left: 0;
+      padding: 0 .2rem;
+      color: white;
+      height: 18%; }
+      .imgs-view .swiper-container .footer .page-num {
+        font-size: 18px; }
+      .imgs-view .swiper-container .footer .img-desc {
+        dislay: block;
+        font-size: 14px;
+        line-height: 18px;
+        max-height: 72px;
+        white-space: pre-wrap;
+        word-break: break-all;
+        word-wrap: break-word;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis; }
+
+.error-page {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #f5f5f5; }
+  .error-page .error-pic {
+    margin: 1.27rem auto 0;
+    margin-top: 16vh;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: url("../images/farmhouse/error-tip@2x.png") center center no-repeat;
+    background-size: cover;
+    background-image: -webkit-image-set(url(../images/farmhouse/error-tip.png) 1x, url(../images/farmhouse/error-tip@2x.png) 2x); }
+  .error-page .error-tip {
+    font-size: 18px;
+    color: #5D5D5D;
+    line-height: 18px;
+    margin-top: .55rem;
+    text-align: center; }
+  .error-page .reload {
+    background: #00B162;
+    border-radius: 4px;
+    color: white;
+    margin: 0.4rem 0.2rem 0;
+    font-size: 18px;
+    height: .44rem;
+    line-height: .44rem;
+    text-align: center; }
+  .error-page .goback {
+    border: 1px solid #00B162;
+    border-radius: 4px;
+    color: #00B162;
+    margin: .34rem .2rem 0;
+    font-size: 18px;
+    height: .44rem;
+    line-height: .44rem;
+    text-align: center; }
+
+.download-dialog {
+  position: fixed;
+  bottom: 0;
+  height: .7rem;
+  background-color: #00b162;
+  z-index: 1000;
+  overflow: visible;
+  width: 100%; }
+  .download-dialog .nongplus-pic {
+    display: inline-block;
+    vertical-align: top;
+    width: .51rem;
+    height: .51rem;
+    margin: .1rem .2rem 0 .3rem;
+    background: url(../images/farmhouse/icon-nongplus.png) center bottom no-repeat;
+    background-size: contain; }
+  .download-dialog .intro {
+    display: inline-block;
+    vertical-align: top;
+    margin: .16rem .1rem 0 0;
+    font-size: 14px;
+    line-height: .2rem;
+    color: #FFFFFF;
+    font-weight: 200;
+    width: 1.4rem; }
+  .download-dialog .download-button {
+    display: inline-block;
+    font-size: 18px;
+    color: #00B162;
+    padding: .06rem .22rem;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin-top: .19rem;
+    background-color: white; }
+  .download-dialog .close-button {
+    position: absolute;
+    right: .05rem;
+    top: .05rem;
+    height: .2rem;
+    width: .2rem;
+    background: url(../images/farmhouse/icon-close-small.png) top right no-repeat;
+    background-size: .13rem .13rem; }
+
+@media screen and (max-width: 320px) {
+  .download-dialog .download-button,
+  .all-features .feature {
+    font-size: 16px; }
+
+  .page-main .farmhouse-info .header-info .name {
+    max-width: 2.6rem; }
+
+  .imgs-view .swiper-container .footer .img-desc {
+    -webkit-line-clamp: 3;
+    max-height: 54px; } }
+@media screen and (min-width: 376px) {
+  .download-dialog .intro {
+    margin-right: .2rem;
+    font-size: 16px; } }
+@media screen and (max-width: 370px) {
+  .page-main .farmhouse-info .name {
+    max-width: 2.5rem; } }
+@media screen and (min-width: 414px) {
+  .page-main .features-container .feature .name.gt-3-words {
+    width: .3rem; } }
+.current {
+  display: block;
+  visibility: visible; }

@@ -1,0 +1,91 @@
+@charset "UTF-8";
+/**************PC端适配**********************/
+@media screen and (min-width: 992px) {
+  .farmhouse-info header,
+  .address-container,
+  .phonenum,
+  .features-container,
+  .notice,
+  .pictures,
+  .tip-text,
+  .icon-arrow-top,
+  .icon-arrow-bottom,
+  .page-main .map-container .icon-navigator,
+  .icon-close {
+    cursor: pointer; }
+
+  html, body {
+    background-color: #f5f5f5;
+    font-size: 200px !important;
+    position: relative;
+    width: 750px;
+    height: 100%;
+    overflow-x: hidden;
+    margin: 0 auto; }
+
+  body {
+    background-color: white;
+    overflow-y: scroll;
+    overflow-x: hidden; }
+
+  .page-main,
+  .all-features,
+  .imgs-view,
+  .notice-detail,
+  .error-page {
+    width: 750px; }
+
+  .imgs-view .swiper-container .footer .page-num {
+    font-size: 16px; }
+
+  .imgs-view .swiper-container .swiper-slide img {
+    max-height: 50%; }
+
+  .page-main .address-container .icon-location {
+    height: 21px;
+    width: 18px;
+    position: relative;
+    top: -4px; }
+  .page-main .phone-container .icon-phone,
+  .page-main .open-date-container .icon-calendar {
+    height: 21px;
+    width: 21px;
+    position: relative;
+    top: -4px; }
+  .page-main .icon-arrow-bottom,
+  .page-main .icon-arrow-top,
+  .page-main .icon-arrow-right {
+    width: 18px;
+    height: 12px; }
+  .page-main .icon-arrow-right,
+  .page-main .scenes_around .scene .icon-arrow-right {
+    margin-top: .01rem; }
+  .page-main .icon-arrow-bottom {
+    transform: translate(0, -0.18rem) rotate(90deg); }
+  .page-main .icon-arrow-top {
+    transform: translate(0, -0.13rem) rotate(-90deg); }
+  .page-main .map-container .icon-navigator {
+    height: 45px;
+    width: 45px; }
+  .page-main .features-container .feature .name.gt-3-words {
+    line-height: .5rem;
+    width: .4rem;
+    padding-top: 0; }
+  .page-main .notice .content .icon-arrow-right {
+    top: 40px; }
+    .page-main .notice .content .icon-arrow-right.single-msg {
+      top: 31px; }
+
+  .imgs-view .swiper-container .icon-close {
+    width: 24px;
+    height: 24px; }
+
+  .isQianLong {
+    display: none !important; }
+
+  ::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important; }
+
+  * {
+    -ms-overflow-style: none; } }
