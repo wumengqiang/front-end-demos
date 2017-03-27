@@ -59,6 +59,8 @@ body{
 }
 
 .page-main{
+    @include display-flex();
+    @include flex-direction(column);
     will-change: transform;
     position: absolute;
     left: 0;
@@ -68,24 +70,18 @@ body{
     background-color: #fff;
     overflow: scroll;
 
-
     .demo-info{
+        @include flex-grow(0);
+        height: 230px;
         position: relative;
         header{
             width: 100%;
-            height: 230px;
+            height: 100%;
             overflow: hidden;
         }
-        .header-info{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 230px;
-            overflow: hidden;
-            background: transparent;
-            z-index: 1000;
-            transform: translateZ(0);
-        }
+    }
+    main{
+        width: 100%;
+        @include flex-grow(1);
     }
 }

@@ -29,8 +29,10 @@ if (!String.prototype.format) {
 
         vm.init();
         function init() {
-            vm.initRotator();
             vm.pageContainer = angular.element('.page-container');
+            vm.pageMain = angular.element('.page-main');
+            vm.img = './images/demo      -sm.jpg';
+            vm.initRotator();
         }
 
         function initRotator(){
@@ -38,7 +40,7 @@ if (!String.prototype.format) {
             var imageEl = header.find('.bg-img');
 
             var image = new Image();
-            image.src = "./images/demo.jpg";
+            image.src = vm.img;
             image.onload =  function(){
                 var RATIO = 1.2, DELTA = 60; // 图片可晃动区域的宽或高 至少是可显示区域的倍数
                 var height, width;
@@ -56,7 +58,7 @@ if (!String.prototype.format) {
                 }
 
                 vm.rotateInfo = {
-                    DELTA: DELTA,
+                    DELTA: DELTA,   // 
                     RATIO: RATIO,
                     container: {
                         height: clientHeight,
@@ -88,19 +90,12 @@ if (!String.prototype.format) {
                     vm.rotateInfo.img.height, vm.rotateInfo.position.x, vm.rotateInfo.position.y);
                 imageEl.attr('style', style);
 
-                vm.lastTime2= Date.now();
-                vm.pageMain = angular.element('.page-main');
                 window.addEventListener('deviceorientation', vm.handleOrientationChange);
             };
 
         }
 
         function handleOrientationChange(event){
-            if(vm.status !== 'init'){
-                // 如果当前页面不是主页, 那么为了性能着想, 不调整图片位置
-                return;
-            }
-
             var RATIO = vm.rotateInfo.RATIO, DELTA = vm.rotateInfo.DELTA;
             if(! vm.rotateInfo.relativeAngle.gamma){
                 vm.rotateInfo.relativeAngle = {
@@ -161,11 +156,6 @@ if (!String.prototype.format) {
                 y = vm.rotateInfo.border.y;
             }
 
-            //if(Date.now() - vm.lastTime2 > 300){
-            //    vm.lastTime2 = Date.now();
-                console.log(vm.rotateInfo.relativeAngle.beta, beta, betaDelta, y);
-            //}
-
             var style = "width:{0}px;height:{1}px;transform: translate3d({2}px, {3}px ,0);".format(vm.rotateInfo.img.width,
                 vm.rotateInfo.img.height, x, y);
                 angular.element('.demo-info header .bg-img').attr('style', style);
@@ -177,11 +167,12 @@ if (!String.prototype.format) {
         }
 
         /*
-         * 获取两个旋转角度之间的角度差
+         * 获取两个旋转角度之间的角度差, 设置0 -> 90 -> -90 -> 0 为正方向
+         * 
          *  @param startAngle 开始角度
          *  @param endAngle  结束角度
          */
-        function getDistance(startAngle, endAngle, maxAngle){ // 0 -> 90 -> -90 -> 0 为正方向
+        function getDistance(startAngle, endAngle, maxAngle){ 
             if(startAngle * endAngle >= 0){  // e.g. 45 -> 90 or  -90 -> -45
                 return endAngle - startAngle;
             } else{ // startAngle * endAngle < 0 // e.g. 89 -> -89

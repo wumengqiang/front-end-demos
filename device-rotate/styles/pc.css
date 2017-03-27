@@ -17,9 +17,7 @@
   .page-main {
     width: 750px; }
 
-  .demo-info,
-  header,
-  .header-info {
+  .demo-info {
     height: 460px !important; }
 
   ::-webkit-scrollbar {
